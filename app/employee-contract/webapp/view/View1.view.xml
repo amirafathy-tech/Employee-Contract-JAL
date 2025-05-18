@@ -1,0 +1,53 @@
+<!-- <mvc:View controllerName="employeecontract.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    </Page>
+</mvc:View> -->
+
+
+<mvc:View
+  controllerName="employeecontract.controller.View1"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core">
+  <Page id="employees" title="Employee Contracts">
+    <content>
+      <Table id="employeeTable"
+             items="{/Employees}">
+        <columns>
+          <Column id="id"><Text id="idText" text="ID"/></Column>
+          <Column id="name"><Text id="nameText" text="Name"/></Column>
+          <Column id="email"><Text id="emailText" text="Email"/></Column>
+          <Column id="enddate"><Text id="endDateText" text="End Date"/></Column>
+          <Column id="type"><Text id="typeText" text="Type"/></Column>
+          <Column id="status"><Text id="statusText" text="Status"/></Column>
+          <Column id="action"><Text id="actionText" text="Action"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="_IDGenColumnListItem">
+            <cells>
+              <Text id="_IDGenText1" text="{ID}" />
+              <Text id="_IDGenText" text="{name}" />
+              <Text id="_IDGenText2" text="{email}" />
+              <Text id="_IDGenText3" text="{contractEndDate}" />
+              <Text id="_IDGenText4" text="{contractType}" />
+              <Text id="_IDGenText5" text="{status}" />
+                            <HBox id="_IDGenHBox1">
+                <Select id="_IDGenSelect" width="10rem" selectedKey="{action}" change="onSelectChange">
+                  <items>
+                    <core:Item id="_IDGenItem" key="renew" text="Renew" />
+                    <core:Item id="_IDGenItem1" key="nonrenew" text="Non-Renew" />
+                    <core:Item id="_IDGenItem2" key="renew_change" text="Renew with Status Change" />
+                  </items>
+                </Select>
+                <Button id="_IDGenButton" text="Apply" press="onApplyAction" />
+              </HBox>
+
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>
