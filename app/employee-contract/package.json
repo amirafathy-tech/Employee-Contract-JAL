@@ -14,6 +14,8 @@
     "@sap/ux-ui5-tooling": "1"
   },
   "scripts": {
-    "deploy-config": "npx -p @sap/ux-ui5-tooling fiori add deploy-config cf"
+    "deploy-config": "npx -p @sap/ux-ui5-tooling fiori add deploy-config cf",
+    "start": "ui5 serve --open index.html",
+    "build:cf": "ui5 build --config ui5.yaml --dest dist && cp xs-app.json dist/"
   }
 }
